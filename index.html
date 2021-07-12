@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene
+      embedded
+      arjs
+      renderer="physicallyCorrectLights: true"
+      cursor="rayOrigin: mouse"
+    >
+      <a-assets>
+        <a-asset-item
+          id="volcan"
+          src="https://cdn.glitch.com/40be6dd7-7584-4fb8-8c56-59086415974d%2Fasset.glb?v=1623760980465"
+        >
+        </a-asset-item>
+      </a-assets>
+
+      <a-marker preset="hiro" position="0 0 0" rotation="" scale="1 1 1">
+        <a-entity raycaster="objects: .collidable" cursor></a-entity>
+
+        <a-gltf-model
+          id="volcano"
+          class="collidable"
+          position="0 0 0"
+          scale="0.6 0.6 0.6"
+          rotation="0 -90 0"
+          gltf-model="#volcan"
+          animation-mixer="clip: cerrado"
+          begin="click">
+        </a-gltf-model>
+
+        <a-entity
+          position="0.04 0.6 0"
+          scale="0.04 0.05 0.04"
+          particle-system="positionSpread:0 10 0; color:#F5600B, #F9DF23; duration:NaN; size:0.05; particleCount:10000; opacity:0.4; blending:2; randomise:true; maxAge:1.5"
+        ></a-entity>
+      </a-marker>
+      <a-entity id="camera" camera></a-entity>
+    </a-scene>
+    <script type="text/javascript">
+         document.querySelector('#volcano').addEventListener('click', function(evt){
+           document.querySelector('#volcano').setAttribute('animation-mixer', 'clip: Separar; loop: once;')
+         })
+         
+         
+    </script>
+  </body>
+</html>
