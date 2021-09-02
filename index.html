@@ -7,7 +7,11 @@
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
   <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-
+  <style>
+    .button{
+     background-color:"red";
+    }
+  </style>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene
       embedded
@@ -51,6 +55,7 @@
         
       </a-marker>
       <a-entity id="camera" camera sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;></a-entity>
+      <div class="button">abrir</div>
     </a-scene>
     <script type="text/javascript">
          document.querySelector('#volcano').addEventListener('click', function(evt){
