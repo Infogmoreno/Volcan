@@ -76,19 +76,10 @@
         let player = document.querySelector("#volcano");
         button.addEventListener('click',function(){
        //hide the button
-         button.setAttribute('visible','false');
-
+         button.setAttribute('visible','true');
+         player.setAttribute('animation-mixer','clip: Separar');
   //add the event listener to handle post animation before starting animations 
-      (use once to help with cleanup)
-        button.addEventListener('click',function() {
-        player.setAttribute('animation-mixer','clip: Separar');
-        },{once:true});
-
-  //start the animation by appending the animation-mixer
-  player.addAttribute('animation-mixer',{clip: "cerrado",loop: "repeat", repetitions: 9999});
-});
-         
-         
+         },{once:true});
     </script>
   </body>
 </html>
