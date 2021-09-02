@@ -69,10 +69,10 @@
         
       </a-marker>
       <a-entity id="camera" camera sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;></a-entity>
-      <div style='position:absolute; bottom: 60px; width:100%; text-align: center; z-index: 1;' class="button">abrir</div>
+      <div id="button" style='position:absolute; bottom: 60px; width:100%; text-align: center; z-index: 1;' class="button">abrir</div>
     </a-scene>
     <script type="text/javascript">
-         document.querySelector('#volcano').addEventListener('click', function(evt){
+         document.querySelector('#button').addEventListener('click', function(evt){
            document.querySelector('#volcano').setAttribute('animation-mixer', 'clip: Separar; loop: once;')
          })
          
