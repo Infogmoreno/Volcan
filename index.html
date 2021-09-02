@@ -72,9 +72,22 @@
       <div id="button" style='position:absolute; bottom: 60px; width:100%; text-align: center; z-index: 1;' class="button">abrir</div>
     </a-scene>
     <script type="text/javascript">
-         document.querySelector('#button').addEventListener('click', function(evt){
-           document.querySelector('#volcano').setAttribute('animation-mixer', 'clip', 'Separar'; loop: once;')
-         })
+        let button = document.querySelector("#button");
+        let player = document.querySelector("#volcano");
+        button.addEventListener('click',function(){
+       //hide the button
+         button.setAttribute('visible','false');
+
+  //add the event listener to handle post animation before starting animations 
+      (use once to help with cleanup)
+        button.addEventListener('click',function() {
+        player.setAttribute('animation-mixer','clip','Separar');
+         player.removeAttribute('animation-mixer');
+        },{once:true});
+
+  //start the animation by appending the animation-mixer
+  player.addAttribute('animation-mixer',{clip: "cerrado",loop: "repeat", repetitions: 9999});
+});
          
          
     </script>
