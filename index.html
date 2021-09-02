@@ -8,7 +8,7 @@
   <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
   
-  <style='position: fixed; bottom: 60px; width:100%; text-align: center; z-index: 1;'>
+  <style>
     .button{
     background-color: #604030;
     opacity:1;
@@ -69,7 +69,7 @@
         
       </a-marker>
       <a-entity id="camera" camera sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;></a-entity>
-      <div class="button">abrir</div>
+      <div='position: fixed; bottom: 60px; width:100%; text-align: center; z-index: 1;' class="button">abrir</div>
     </a-scene>
     <script type="text/javascript">
          document.querySelector('#volcano').addEventListener('click', function(evt){
